@@ -6,6 +6,9 @@ package frc.robot;
 
 import com.pathplanner.lib.util.PIDConstants;
 
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.geometry.Rotation3d;
+import edu.wpi.first.math.geometry.Transform3d;
 import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.util.Units;
 import swervelib.math.Matter;
@@ -21,7 +24,7 @@ import swervelib.math.Matter;
 public final class Constants
 {
 
-  public static final double ROBOT_MASS = (148 - 20.3) * 0.453592; // 32lbs * kg per pound
+  public static final double ROBOT_MASS = (120) * 0.453592; // 32lbs * kg per pound
   public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
   public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
 
@@ -39,6 +42,15 @@ public final class Constants
     public static final double WHEEL_LOCK_TIME = 10; // seconds
   }
 
+  public static final class VisionConstants {
+    public static final Transform3d cameraToRobot = new Transform3d(
+      new Translation3d(0,Units.inchesToMeters(-12.3),Units.inchesToMeters(12)), // milton: 14
+      new Rotation3d(0,0.413,3.412)
+    );
+    public static final Pose2d startingPose = new Pose2d();
+    public static final int DETECTED_ALLIANCE_TRHESHOLD = 1;
+  }
+  
   public static class OperatorConstants
   {
 
