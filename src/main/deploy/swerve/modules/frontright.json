@@ -1,7 +1,7 @@
 {
   "location": {
-    "front": 10.375,
-    "left": 10.375
+    "front": -10.375,
+    "left": -10.375
   },
   "absoluteEncoderOffset": 177.363,
   "drive": {
@@ -10,7 +10,7 @@
     "canbus": null
   },
   "inverted": {
-    "drive": false,
+    "drive": true,
     "angle": false
   },
   "angle": {
